@@ -1,0 +1,527 @@
+
+import os
+
+# Create a complete working blog website with all pages
+
+print("🚀 Creating Complete Agriculture Blog Website...")
+print("=" * 60)
+
+# Create directory structure
+pages_created = []
+
+# 1. CREATE INDEX.HTML (Homepage)
+index_html = '''<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Agriculture Moderne - Technologies, innovations et pratiques pour l'agriculture de demain. IA, robotique, agriculture de précision, irrigation intelligente.">
+    <meta name="keywords" content="agriculture moderne, agritech, innovation agricole, agriculture de précision, robotique agricole">
+    <title>Blog Agriculture Moderne - Technologies et Innovations Agricoles 2025</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #2c5f2d;
+            --secondary-color: #97bc62;
+            --accent-color: #ff8c00;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--light-bg);
+        }
+        
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+        
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--light-bg);
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+            animation: slideDown 0.6s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .hero {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+        
+        nav {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem 20px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        nav a:hover {
+            color: var(--accent-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+        
+        .featured-section {
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--accent-color);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .blog-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .blog-card:nth-child(1) { animation-delay: 0.1s; }
+        .blog-card:nth-child(2) { animation-delay: 0.2s; }
+        .blog-card:nth-child(3) { animation-delay: 0.3s; }
+        .blog-card:nth-child(4) { animation-delay: 0.4s; }
+        .blog-card:nth-child(5) { animation-delay: 0.5s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .blog-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--white);
+        }
+        
+        .blog-content {
+            padding: 1.5rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .blog-excerpt {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .read-more {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .read-more:hover {
+            background: #ff6b00;
+            transform: translateX(5px);
+        }
+        
+        .newsletter-cta {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 4rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .newsletter-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .newsletter-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: #ff6b00;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 140, 0, 0.4);
+        }
+        
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        footer p {
+            margin: 0.5rem 0;
+        }
+        
+        .footer-links {
+            margin: 1.5rem 0;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div class="loader-spinner"></div>
+    </div>
+    
+    <header>
+        <div class="hero">
+            <h1>🌾 Blog Agriculture Moderne</h1>
+            <p>Technologies, Innovations et Pratiques pour l'Agriculture de Demain</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+            <li><a href="ai-robotics-agriculture-2025.html"><i class="fas fa-robot"></i> IA & Robotique</a></li>
+            <li><a href="agriculture-precision-technologies-2025.html"><i class="fas fa-satellite"></i> Précision</a></li>
+            <li><a href="agriculture-regenerative-durable-2025.html"><i class="fas fa-leaf"></i> Durable</a></li>
+            <li><a href="marche-equipement-agricole-2025.html"><i class="fas fa-tractor"></i> Équipements</a></li>
+            <li><a href="irrigation-intelligente-connectee-2025.html"><i class="fas fa-water"></i> Irrigation</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section class="featured-section">
+            <h2 class="section-title">Articles Récents</h2>
+            
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 22 Oct 2025</span>
+                            <span><i class="far fa-clock"></i> 10 min</span>
+                        </div>
+                        <h3 class="blog-title">IA et Robotique en Agriculture 2025</h3>
+                        <p class="blog-excerpt">
+                            Découvrez comment l'intelligence artificielle et la robotique transforment les exploitations modernes. Robots autonomes, récolte intelligente, ROI de 2-5 ans.
+                        </p>
+                        <a href="ai-robotics-agriculture-2025.html" class="read-more">
+                            Lire l'article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-satellite"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 22 Oct 2025</span>
+                            <span><i class="far fa-clock"></i> 12 min</span>
+                        </div>
+                        <h3 class="blog-title">Agriculture de Précision 2025</h3>
+                        <p class="blog-excerpt">
+                            GPS, capteurs IoT, drones et big data : augmentez vos rendements de 15-30% avec les technologies de précision. Guide complet et rentabilité.
+                        </p>
+                        <a href="agriculture-precision-technologies-2025.html" class="read-more">
+                            Lire l'article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 22 Oct 2025</span>
+                            <span><i class="far fa-clock"></i> 11 min</span>
+                        </div>
+                        <h3 class="blog-title">Agriculture Régénérative et Durable</h3>
+                        <p class="blog-excerpt">
+                            Conciliez rentabilité et durabilité avec l'agriculture régénérative. Techniques, aides PAC 2025, certification bio et préservation des sols.
+                        </p>
+                        <a href="agriculture-regenerative-durable-2025.html" class="read-more">
+                            Lire l'article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 22 Oct 2025</span>
+                            <span><i class="far fa-clock"></i> 9 min</span>
+                        </div>
+                        <h3 class="blog-title">Marché Équipements Agricoles 2025</h3>
+                        <p class="blog-excerpt">
+                            Analyse complète du marché : tendances, prix tracteurs, moissonneuses-batteuses, comparatifs marques et conseils d'achat pour 2025.
+                        </p>
+                        <a href="marche-equipement-agricole-2025.html" class="read-more">
+                            Lire l'article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 22 Oct 2025</span>
+                            <span><i class="far fa-clock"></i> 8 min</span>
+                        </div>
+                        <h3 class="blog-title">Irrigation Intelligente et Connectée</h3>
+                        <p class="blog-excerpt">
+                            Économisez 40% d'eau avec les systèmes d'irrigation IoT. Capteurs d'humidité, automatisation et pilotage smartphone pour votre exploitation.
+                        </p>
+                        <a href="irrigation-intelligente-connectee-2025.html" class="read-more">
+                            Lire l'article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <div class="newsletter-cta">
+            <h2><i class="fas fa-envelope"></i> Restez Informé</h2>
+            <p>Recevez chaque semaine les dernières innovations agricoles directement dans votre boîte mail</p>
+            <a href="ai-robotics-agriculture-2025.html#newsletter" class="cta-button">
+                <i class="fas fa-paper-plane"></i> S'abonner Gratuitement
+            </a>
+        </div>
+    </div>
+    
+    <footer>
+        <div>
+            <p><strong>🌾 Blog Agriculture Moderne</strong></p>
+            <p>Technologies, Innovations et Pratiques pour l'Agriculture de Demain</p>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>© 2025 - Tous droits réservés</p>
+        </div>
+    </footer>
+    
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.querySelector('.loader').classList.add('hidden');
+            }, 600);
+        });
+    </script>
+</body>
+</html>'''
+
+with open('index.html', 'w', encoding='utf-8') as f:
+    f.write(index_html)
+pages_created.append('index.html')
+
+print(f"✅ 1/6 Created: index.html (Homepage)")
+print(f"   📊 Size: {len(index_html):,} bytes")

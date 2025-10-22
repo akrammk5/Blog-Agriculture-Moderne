@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Adoptez l'agriculture régénérative : techniques, équipements, certifications bio et aides PAC 2025. Préservez vos sols tout en augmentant votre rentabilité.">
+    <meta name="keywords" content="agriculture régénérative, agriculture durable, agriculture biologique, sols vivants, PAC 2025, agroécologie">
+    <meta name="author" content="Blog Agriculture Moderne">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Agriculture Régénérative et Durable 2025 : Pratiques, Rentabilité et Aides Disponibles">
+    <meta property="og:description" content="Adoptez l'agriculture régénérative : techniques, équipements, certifications bio et aides PAC 2025. Préservez vos sols tout en augmentant votre rentabilité.">
+    <meta property="og:type" content="article">
+
+    <title>Agriculture Régénérative et Durable 2025 : Pratiques, Rentabilité et Aides Disponibles</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Agriculture Régénérative 2025 : Rentabilité et Durabilité",
+      "datePublished": "2025-10-22",
+      "author": {
+        "@type": "Person",
+        "name": "Équipe Agriculture Moderne"
+      }
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c5f2d;
+            --secondary-color: #97bc62;
+            --accent-color: #ff8c00;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        .loader.hidden { opacity: 0; visibility: hidden; }
+
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--light-bg);
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .blog-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        nav {
+            background: var(--white);
+            border-bottom: 2px solid #e0e0e0;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover { color: var(--accent-color); }
+        nav a:hover::after { width: 100%; }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+            z-index: 9998;
+            transition: width 0.1s ease;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent-color);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: var(--primary-color); transform: translateY(-5px); }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+
+        .article-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 1rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p { margin-bottom: 1.5rem; text-align: justify; }
+
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        a:hover { color: var(--accent-color); }
+
+        strong { color: var(--primary-color); font-weight: 600; }
+
+        ul, ol { margin-left: 2rem; margin-bottom: 1.5rem; }
+        li { margin-bottom: 0.5rem; }
+
+        .highlight-box, .info-box, .warning-box {
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 4px solid #4caf50;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 4px solid #2196F3;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left: 4px solid #ff9800;
+        }
+
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--light-bg) 0%, #fff 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .newsletter-section h3 {
+            color: var(--white);
+            margin-top: 0;
+            font-size: 2rem;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 2rem auto 0;
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.95);
+            color: var(--text-color);
+        }
+
+        .form-button {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-button:hover {
+            background: #ff6b00;
+            transform: translateY(-3px);
+        }
+
+        .related-articles {
+            background: var(--light-bg);
+            padding: 2rem;
+            margin: 3rem 0;
+            border-radius: 15px;
+        }
+
+        .related-articles h3 { color: var(--primary-color); margin-top: 0; }
+
+        .related-articles ul { list-style: none; margin-left: 0; }
+
+        .related-articles li {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .related-articles li:hover {
+            background: var(--white);
+            transform: translateX(10px);
+        }
+
+        .social-share {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--light-bg);
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .share-btn:hover { transform: translateY(-5px) scale(1.1); }
+
+        .share-btn.facebook { background: #3b5998; }
+        .share-btn.twitter { background: #1da1f2; }
+        .share-btn.linkedin { background: #0077b5; }
+        .share-btn.whatsapp { background: #25d366; }
+
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.6rem; }
+            nav ul { gap: 1rem; font-size: 0.9rem; }
+            .stats-section { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <header>
+        <div class="header-container">
+            <div class="blog-title">🌾 Blog Agriculture Moderne</div>
+            <p>Technologies, Innovations et Pratiques pour l'Agriculture de Demain</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+            <li><a href="ai-robotics-agriculture-2025.html"><i class="fas fa-robot"></i> IA & Robotique</a></li>
+            <li><a href="agriculture-precision-technologies-2025.html"><i class="fas fa-satellite"></i> Précision</a></li>
+            <li><a href="agriculture-regenerative-durable-2025.html"><i class="fas fa-leaf"></i> Durable</a></li>
+            <li><a href="marche-equipement-agricole-2025.html"><i class="fas fa-tractor"></i> Équipements</a></li>
+            <li><a href="irrigation-intelligente-connectee-2025.html"><i class="fas fa-water"></i> Irrigation</a></li>
+        </ul>
+    </nav>
+
+    <article class="container">
+        <div class="article-meta">
+            <i class="far fa-calendar"></i> Publié le 22 octobre 2025 | 
+            <i class="far fa-clock"></i> Temps de lecture : 10 min | 
+            <i class="fas fa-tags"></i> agriculture régénérative
+        </div>
+
+        <h1><i class="fas fa-leaf"></i> Agriculture Régénérative 2025 : Rentabilité et Durabilité</h1>
+
+        
+<p>L'<strong>agriculture régénérative</strong> dépasse le simple "maintien" de la fertilité des sols pour activement restaurer leur santé, biodiversité et capacité de séquestration carbone. En 2025, cette approche n'est plus une niche marginale mais une stratégie mainstream adoptée par des milliers d'exploitations françaises, portée par les incitations PAC, l'engouement consommateur et surtout, des résultats économiques probants.</p>
+
+<div class="stats-section">
+    <div class="stat-card">
+        <div class="stat-number">+1.5%</div>
+        <div class="stat-label">Matière Organique/an</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number">50-70%</div>
+        <div class="stat-label">Réduction Intrants</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number">+15%</div>
+        <div class="stat-label">Prix Vente Bio</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number">400€</div>
+        <div class="stat-label">Aides PAC/ha/an</div>
+    </div>
+</div>
+
+<div class="highlight-box">
+    <strong><i class="fas fa-seedling"></i> Impact mesurable :</strong> Les fermes en agriculture régénérative augmentent leur taux de matière organique de 0.5-1.5% par an, améliorant résilience sécheresse, rétention eau (+25-40%) et vie biologique du sol (×3-5 vers de terre).
+</div>
+
+<h2><i class="fas fa-leaf"></i> Principes et Pratiques Régénératives</h2>
+
+<h3>Couverture Permanente du Sol</h3>
+
+<p>Les <strong>couverts végétaux</strong> multi-espèces (5-15 variétés) protègent le sol toute l'année, nourrissent la biologie, fixent l'azote atmosphérique (50-150 kg N/ha selon légumineuses) et structurent la terre. L'investissement semences de 50-80 euros/ha est largement compensé par la réduction d'engrais azotés de 80-120 euros/ha dès l'année suivante.</p>
+
+<p>Les mélanges incluent légumineuses (trèfle, vesce, féverole), graminées (ray-grass, avoine), crucifères (radis, moutarde), et maintenant des espèces stimulant mycorhizes. La destruction par rouleau-faucheuse ou gel évite herbicides, créant un mulch protecteur pour la culture suivante.</p>
+
+<h3>Réduction du Travail du Sol</h3>
+
+<p>Le <strong>semis direct sous couvert</strong> (SDSC) ou techniques culturales simplifiées (TCS) préservent la structure du sol, les réseaux mycéliens et minimisent l'érosion. Le passage de charrue (150-200 euros/ha coût complet) à semis direct (40-60 euros/ha) économise 90-140 euros/ha tout en protégeant le capital sol.</p>
+
+<p>Les rendements égalent voire dépassent le conventionnel après 3-5 ans de transition, période durant laquelle le système se stabilise. Les premiers adoptants (10-15 ans de recul) constatent des rendements supérieurs de 5-10% en années sèches grâce à la meilleure résilience hydrique.</p>
+
+<h2><i class="fas fa-cow"></i> Intégration Agriculture-Élevage</h2>
+
+<h3>Pâturage Tournant Dynamique</h3>
+
+<p>Le <strong>pâturage régénératif</strong> divise les parcelles en 20-50 paddocks visités 1-2 jours puis laissés au repos 30-60 jours. Cette intensité concentrée stimule la repousse herbagère (+30-50% productivité), augmente le taux de matière organique et séquestre 0.5-1.5 tonnes CO2/ha/an selon sols.</p>
+
+<p>Les éleveurs constatent une autonomie fourragère accrue (réduction de 30-50% des achats concentrés) et amélioration de la santé animale (parasitisme réduit, meilleure immunité). Les coûts d'installation de clôtures mobiles et abreuvoirs (3000-8000 euros initial) sont amortis en 2-4 ans.</p>
+
+<h3>Polyculture-Élevage</h3>
+
+<p>La <strong>réintégration d'élevage</strong> dans les exploitations céréalières permet valorisation directe des couverts (pâturage automne/hiver), fertilisation organique gratuite et diversification des revenus. Des modèles émergent en location temporaire de troupeaux ou accords entre voisins céréaliers-éleveurs.</p>
+
+<h2><i class="fas fa-euro-sign"></i> Rentabilité et Aides Disponibles</h2>
+
+<div class="info-box">
+    <strong><i class="fas fa-hand-holding-usd"></i> PAC 2023-2027 :</strong> Les écorégimes "voie des pratiques" rémunèrent 60-90 euros/ha (niveau standard) à 100-120 euros/ha (niveau supérieur) pour diversification cultures, couverts hivernaux et agroforesterie. Les MAEC (Mesures Agro-Environnementales Climatiques) ajoutent 150-350 euros/ha sur 5 ans pour engagements renforcés.
+</div>
+
+<p>Une <strong>exploitation type de 100 hectares</strong> en transition régénérative réduit ses charges de 120-180 euros/ha annuels (engrais -60%, phytos -40%, carburant -25%) tout en percevant 200-400 euros/ha d'aides PAC spécifiques. Le différentiel de charges + aides atteint 320-580 euros/ha, compensant largement une éventuelle baisse de rendement de 5-10% durant transition.</p>
+
+<p>Après 3-5 ans, les rendements se stabilisent au niveau conventionnel voire supérieurs, maintenant le différentiel positif de 280-480 euros/ha en rentabilité nette. La valorisation premium bio (+15-25%) ou label régénératif (émergent) amplifie encore les bénéfices.</p>
+
+<h2><i class="fas fa-certificate"></i> Certifications et Labels</h2>
+
+<h3>Agriculture Biologique</h3>
+
+<p>La <strong>certification bio</strong> (Ecocert, Bureau Veritas) se combine naturellement avec les pratiques régénératives. Les aides conversion bio atteignent 300-350 euros/ha pendant 3 ans (grandes cultures) à 900 euros/ha (maraîchage), suivies de 150-250 euros/ha en maintien. Le premium de prix (15-35% selon cultures) justifie la transition malgré rendements 10-20% inférieurs.</p>
+
+<h3>Labels Émergents</h3>
+
+<p>Des <strong>certifications régénératives</strong> comme Regenerative Organic Certified, Carbon Agri ou Label Haie créent différenciation supplémentaire. Les entreprises agroalimentaires (Danone, Nestlé, General Mills) financent programmes incitatifs de 50-150 euros/ha pour leurs bassins d'approvisionnement contractualisés.</p>
+
+<div class="warning-box">
+    <strong><i class="fas fa-clock"></i> Transition progressive :</strong> La conversion intégrale demande 5-7 ans pour stabilisation complète. Approche recommandée : commencer par 20-30% de la surface, observer, ajuster, puis étendre progressivement selon résultats et confiance acquise.
+</div>
+
+<h2><i class="fas fa-users"></i> Accompagnement et Formation</h2>
+
+<p>Les <strong>réseaux d'agriculteurs</strong> (GIEE, groupes 30 000, Maraichage Sol Vivant, Ver de Terre Production) offrent partage d'expérience et accompagnement technique gratuit ou faible coût. Les chambres d'agriculture proposent formations de 2-5 jours (finançables via fonds VIVEA) et diagnostics sols/biodiversité subventionnés.</p>
+
+<p>L'apprentissage par les pairs constitue le vecteur principal d'adoption : 72% des convertis citent l'influence d'un voisin/ami agriculteur déjà engagé. Les plateformes comme Pour une Agriculture du Vivant connectent néophytes et mentors expérimentés.</p>
+
+
+        <div id="newsletter" class="newsletter-section">
+            <h3><i class="fas fa-envelope"></i> Restez Informé</h3>
+            <p>Recevez chaque semaine les dernières innovations agricoles</p>
+            <div class="form-container">
+                <form action="#" method="POST">
+                    <input type="email" class="form-input" placeholder="Votre email" required>
+                    <input type="text" class="form-input" placeholder="Votre nom (optionnel)">
+                    <button type="submit" class="form-button">
+                        <i class="fas fa-paper-plane"></i> S'abonner Gratuitement
+                    </button>
+                </form>
+                <p style="font-size: 0.9rem; margin-top: 1rem;">
+                    <i class="fas fa-lock"></i> Vos données sont protégées
+                </p>
+            </div>
+        </div>
+
+        <div class="social-share">
+            <h4><i class="fas fa-share-alt"></i> Partager cet Article</h4>
+            <div class="share-buttons">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank" class="share-btn facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com/intent/tweet?url=" target="_blank" class="share-btn twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=" target="_blank" class="share-btn linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://wa.me/?text=" target="_blank" class="share-btn whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="related-articles">
+            <h3><i class="fas fa-book-open"></i> Articles Connexes</h3>
+            <ul>
+                <li><i class="fas fa-arrow-right"></i> <a href="ai-robotics-agriculture-2025.html">IA et Robotique en Agriculture 2025</a></li>
+                <li><i class="fas fa-arrow-right"></i> <a href="agriculture-precision-technologies-2025.html">Agriculture de Précision 2025</a></li>
+                <li><i class="fas fa-arrow-right"></i> <a href="marche-equipement-agricole-2025.html">Marché des Équipements Agricoles</a></li>
+                <li><i class="fas fa-arrow-right"></i> <a href="irrigation-intelligente-connectee-2025.html">Irrigation Intelligente et Connectée</a></li>
+            </ul>
+        </div>
+    </article>
+
+    <footer>
+        <p><strong>🌾 Blog Agriculture Moderne</strong></p>
+        <p>© 2025 - Tous droits réservés</p>
+    </footer>
+
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => document.querySelector('.loader').classList.add('hidden'), 600);
+        });
+
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            document.getElementById('progressBar').style.width = (winScroll / height) * 100 + '%';
+
+            const backToTop = document.getElementById('backToTop');
+            backToTop.classList.toggle('visible', winScroll > 300);
+        });
+
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

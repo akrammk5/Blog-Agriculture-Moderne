@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Analyse complète du marché des équipements agricoles 2025. Tendances, prix tracteurs, moissonneuses-batteuses, comparatifs marques et conseils achat.">
+    <meta name="keywords" content="équipement agricole 2025, prix tracteur, matériel agricole, moissonneuse batteuse, marché machines agricoles">
+    <meta name="author" content="Blog Agriculture Moderne">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Marché des Équipements Agricoles 2025 : Tendances, Prix et Meilleures Marques">
+    <meta property="og:description" content="Analyse complète du marché des équipements agricoles 2025. Tendances, prix tracteurs, moissonneuses-batteuses, comparatifs marques et conseils achat.">
+    <meta property="og:type" content="article">
+
+    <title>Marché des Équipements Agricoles 2025 : Tendances, Prix et Meilleures Marques</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Marché des Équipements Agricoles 2025",
+      "datePublished": "2025-10-22",
+      "author": {
+        "@type": "Person",
+        "name": "Équipe Agriculture Moderne"
+      }
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c5f2d;
+            --secondary-color: #97bc62;
+            --accent-color: #ff8c00;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        .loader.hidden { opacity: 0; visibility: hidden; }
+
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--light-bg);
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .blog-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        nav {
+            background: var(--white);
+            border-bottom: 2px solid #e0e0e0;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover { color: var(--accent-color); }
+        nav a:hover::after { width: 100%; }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+            z-index: 9998;
+            transition: width 0.1s ease;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent-color);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: var(--primary-color); transform: translateY(-5px); }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+
+        .article-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 1rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p { margin-bottom: 1.5rem; text-align: justify; }
+
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        a:hover { color: var(--accent-color); }
+
+        strong { color: var(--primary-color); font-weight: 600; }
+
+        ul, ol { margin-left: 2rem; margin-bottom: 1.5rem; }
+        li { margin-bottom: 0.5rem; }
+
+        .highlight-box, .info-box, .warning-box {
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 4px solid #4caf50;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 4px solid #2196F3;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left: 4px solid #ff9800;
+        }
+
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--light-bg) 0%, #fff 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .newsletter-section h3 {
+            color: var(--white);
+            margin-top: 0;
+            font-size: 2rem;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 2rem auto 0;
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.95);
+            color: var(--text-color);
+        }
+
+        .form-button {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-button:hover {
+            background: #ff6b00;
+            transform: translateY(-3px);
+        }
+
+        .related-articles {
+            background: var(--light-bg);
+            padding: 2rem;
+            margin: 3rem 0;
+            border-radius: 15px;
+        }
+
+        .related-articles h3 { color: var(--primary-color); margin-top: 0; }
+
+        .related-articles ul { list-style: none; margin-left: 0; }
+
+        .related-articles li {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .related-articles li:hover {
+            background: var(--white);
+            transform: translateX(10px);
+        }
+
+        .social-share {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--light-bg);
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .share-btn:hover { transform: translateY(-5px) scale(1.1); }
+
+        .share-btn.facebook { background: #3b5998; }
+        .share-btn.twitter { background: #1da1f2; }
+        .share-btn.linkedin { background: #0077b5; }
+        .share-btn.whatsapp { background: #25d366; }
+
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.6rem; }
+            nav ul { gap: 1rem; font-size: 0.9rem; }
+            .stats-section { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <header>
+        <div class="header-container">
+            <div class="blog-title">🌾 Blog Agriculture Moderne</div>
+            <p>Technologies, Innovations et Pratiques pour l'Agriculture de Demain</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+            <li><a href="ai-robotics-agriculture-2025.html"><i class="fas fa-robot"></i> IA & Robotique</a></li>
+            <li><a href="agriculture-precision-technologies-2025.html"><i class="fas fa-satellite"></i> Précision</a></li>
+            <li><a href="agriculture-regenerative-durable-2025.html"><i class="fas fa-leaf"></i> Durable</a></li>
+            <li><a href="marche-equipement-agricole-2025.html"><i class="fas fa-tractor"></i> Équipements</a></li>
+            <li><a href="irrigation-intelligente-connectee-2025.html"><i class="fas fa-water"></i> Irrigation</a></li>
+        </ul>
+    </nav>
+
+    <article class="container">
+        <div class="article-meta">
+            <i class="far fa-calendar"></i> Publié le 22 octobre 2025 | 
+            <i class="far fa-clock"></i> Temps de lecture : 10 min | 
+            <i class="fas fa-tags"></i> équipement agricole 2025
+        </div>
+
+        <h1><i class="fas fa-tractor"></i> Marché des Équipements Agricoles 2025</h1>
+
+        
+<p>Le <strong>marché des équipements agricoles</strong> vit une transformation profonde en 2025, tiraillé entre électrification, automatisation, contraintes budgétaires des agriculteurs et consolidation des constructeurs. Avec un marché européen de 27 milliards d'euros et des innovations accélérées, choisir le bon matériel nécessite analyse rigoureuse du rapport coût/bénéfice.</p>
+
+<div class="stats-section">
+    <div class="stat-card">
+        <div class="stat-number">+12%</div>
+        <div class="stat-label">Prix Tracteurs 2025</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number">27Mds€</div>
+        <div class="stat-label">Marché Europe</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number">-15%</div>
+        <div class="stat-label">Occasion vs Neuf</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number">8-10</div>
+        <div class="stat-label">Ans Amortissement</div>
+    </div>
+</div>
+
+<h2><i class="fas fa-tractor"></i> Tracteurs : Prix et Tendances 2025</h2>
+
+<h3>Gamme de Prix par Puissance</h3>
+
+<p>Les <strong>tracteurs neufs 2025</strong> affichent une inflation de 8-12% vs 2024, portée par électronique embarquée, normes anti-pollution Stage V et pénuries composants. Prix indicatifs hors options :</p>
+
+<ul>
+    <li><strong>60-80 CV</strong> (polyvalents petites exploitations) : 35 000-55 000 euros</li>
+    <li><strong>100-130 CV</strong> (grandes cultures standard) : 75 000-110 000 euros</li>
+    <li><strong>150-200 CV</strong> (exploitation 200+ hectares) : 130 000-180 000 euros</li>
+    <li><strong>250-300+ CV</strong> (CUMA, grandes structures) : 220 000-350 000 euros</li>
+</ul>
+
+<p>Les options GPS RTK (+8 000-15 000 euros), cabines pressurisées (+6 000-9 000 euros) et transmissions continues (CVT +15 000-25 000 euros) gonflent significativement la facture finale. Un tracteur 150 CV "tout équipé" atteint facilement 180 000-200 000 euros.</p>
+
+<h3>Marché de l'Occasion</h3>
+
+<p>Le <strong>marché secondaire</strong> reste dynamique avec des tracteurs 5-10 ans à 50-65% du prix neuf équivalent. Les modèles récents (2020-2022) Stage V se valorisent mieux que les anciens Stage IIIB. Sites de référence : Agriaffaires, Leboncoin Pro, enchères de concessionnaires.</p>
+
+<div class="info-box">
+    <strong><i class="fas fa-calculator"></i> Calcul de rentabilité :</strong> Un tracteur 150 CV à 150 000 euros amorti sur 10 ans avec 600 heures/an représente 25 euros/heure (amortissement + intérêts). Ajoutez carburant (12-18 L/h × 1,50 €/L), maintenance (4-6 euros/h), assurance : coût complet 50-70 euros/heure.
+</div>
+
+<h2><i class="fas fa-leaf"></i> Moissonneuses-Batteuses 2025</h2>
+
+<h3>Prix par Catégorie</h3>
+
+<p>Les <strong>moissonneuses-batteuses</strong> constituent l'investissement le plus lourd avec des prix 2025 :</p>
+
+<ul>
+    <li><strong>Classe 5-6</strong> (200-250 CV, 50-150 ha) : 180 000-250 000 euros</li>
+    <li><strong>Classe 7</strong> (300-350 CV, 150-300 ha) : 280 000-380 000 euros</li>
+    <li><strong>Classe 8-9</strong> (400-500 CV, 300-600 ha) : 450 000-650 000 euros</li>
+    <li><strong>Classe 10+</strong> (600+ CV, CUMA/ETA) : 700 000-900 000 euros</li>
+</ul>
+
+<p>Les coûts de récolte varient de 80-120 euros/ha en propriété (classe 7, 200 ha/an) à 150-220 euros/ha en prestation ETA. La mutualisation en CUMA (3-5 exploitations) divise le coût par 2-3 tout en accédant à du matériel récent.</p>
+
+<h3>Technologies Embarquées</h3>
+
+<p>Les <strong>moissonneuses 2025</strong> intègrent cartographie rendement temps réel, ajustement automatique paramètres battage selon culture/humidité, et caméras IA détectant pertes grains. Ces technologies optimisent débit de chantier (+8-12%) et qualité récolte (-15-25% pertes grain).</p>
+
+<h2><i class="fas fa-warehouse"></i> Comparatif Marques 2025</h2>
+
+<h3>Leaders du Marché</h3>
+
+<p><strong>John Deere</strong> domine avec 25% parts de marché européen, reconnu pour électronique avancée et réseau SAV dense. Premium prix +10-15% justifié par valeur résiduelle supérieure.</p>
+
+<p><strong>New Holland / Case IH</strong> (groupe CNH) proposent rapport qualité-prix compétitif, gamme complète tracteurs-moissonneuses, prix -8-12% vs John Deere à spécifications équivalentes.</p>
+
+<p><strong>Fendt</strong> (Agco) se positionne haut de gamme avec transmission Vario (CVT) appréciée, design soigné, prix alignés John Deere mais différenciation technique marquée.</p>
+
+<p><strong>Massey Ferguson</strong> (Agco) vise le milieu de gamme avec tarifs -15-20% vs leaders, fiabilité correcte, SAV plus variable selon régions.</p>
+
+<p><strong>Claas</strong> excelle en moissonneuses (30% marché Europe) avec technologies propriétaires performantes, moins fort sur tracteurs face concurrence.</p>
+
+<h2><i class="fas fa-hand-holding-usd"></i> Financement et Aides</h2>
+
+<div class="warning-box">
+    <strong><i class="fas fa-percentage"></i> Taux de financement 2025 :</strong> Les crédits équipement agricole oscillent entre 3,5-5,5% selon profil et apport. Le crédit-bail (leasing) représente 45% des acquisitions neuves, préservant trésorerie contre surcoût intérêts.
+</div>
+
+<p>Les <strong>aides à l'investissement</strong> incluent :</p>
+
+<ul>
+    <li><strong>PCAE</strong> (Plan de Compétitivité et d'Adaptation des Exploitations) : 20-40% subvention sur matériels innovants/performants environnementaux</li>
+    <li><strong>JA</strong> (Jeunes Agriculteurs) : majoration +10 points, jusqu'à 50% de subvention plafonnée 35 000 euros</li>
+    <li><strong>CUMA</strong> : aides spécifiques 30-50% sur équipements mutualisés, dossiers déposés collectivement</li>
+    <li><strong>Crédit d'impôt</strong> agriculteurs en ZRR (Zones de Revitalisation Rurale) : 1000 euros/an</li>
+</ul>
+
+<h2><i class="fas fa-chart-line"></i> Électrification et Innovations</h2>
+
+<p>Les <strong>tracteurs électriques</strong> émergent timidement (Fendt e100, John Deere GridCON) avec autonomie 4-8 heures adaptée viticulture/maraîchage/élevage. Prix actuels +30-50% vs diesel, justifiés dans contextes spécifiques (serres, travail en bâtiments) mais pas encore compétitifs grandes cultures.</p>
+
+<p>L'<strong>automatisation niveau 4</strong> (tracteurs autonomes supervisés) arrivera en volume 2026-2028, d'abord sur tâches répétitives (travail du sol, pulvérisation) puis extension progressive. Prix premium +40-60 000 euros vs modèles conventionnels.</p>
+
+
+        <div id="newsletter" class="newsletter-section">
+            <h3><i class="fas fa-envelope"></i> Restez Informé</h3>
+            <p>Recevez chaque semaine les dernières innovations agricoles</p>
+            <div class="form-container">
+                <form action="#" method="POST">
+                    <input type="email" class="form-input" placeholder="Votre email" required>
+                    <input type="text" class="form-input" placeholder="Votre nom (optionnel)">
+                    <button type="submit" class="form-button">
+                        <i class="fas fa-paper-plane"></i> S'abonner Gratuitement
+                    </button>
+                </form>
+                <p style="font-size: 0.9rem; margin-top: 1rem;">
+                    <i class="fas fa-lock"></i> Vos données sont protégées
+                </p>
+            </div>
+        </div>
+
+        <div class="social-share">
+            <h4><i class="fas fa-share-alt"></i> Partager cet Article</h4>
+            <div class="share-buttons">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank" class="share-btn facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com/intent/tweet?url=" target="_blank" class="share-btn twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=" target="_blank" class="share-btn linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://wa.me/?text=" target="_blank" class="share-btn whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="related-articles">
+            <h3><i class="fas fa-book-open"></i> Articles Connexes</h3>
+            <ul>
+                <li><i class="fas fa-arrow-right"></i> <a href="ai-robotics-agriculture-2025.html">IA et Robotique en Agriculture 2025</a></li>
+                <li><i class="fas fa-arrow-right"></i> <a href="agriculture-precision-technologies-2025.html">Agriculture de Précision 2025</a></li>
+                <li><i class="fas fa-arrow-right"></i> <a href="marche-equipement-agricole-2025.html">Marché des Équipements Agricoles</a></li>
+                <li><i class="fas fa-arrow-right"></i> <a href="irrigation-intelligente-connectee-2025.html">Irrigation Intelligente et Connectée</a></li>
+            </ul>
+        </div>
+    </article>
+
+    <footer>
+        <p><strong>🌾 Blog Agriculture Moderne</strong></p>
+        <p>© 2025 - Tous droits réservés</p>
+    </footer>
+
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => document.querySelector('.loader').classList.add('hidden'), 600);
+        });
+
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            document.getElementById('progressBar').style.width = (winScroll / height) * 100 + '%';
+
+            const backToTop = document.getElementById('backToTop');
+            backToTop.classList.toggle('visible', winScroll > 300);
+        });
+
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
